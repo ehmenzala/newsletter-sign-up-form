@@ -1,0 +1,139 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+// p,
+// ul,
+// h1 {
+//   margin: 0;
+// }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+:root {
+  --clr-primary: hsl(4, 100%, 67%);
+  --clr-accent-600: hsl(234, 29%, 20%);
+  --clr-accent-400: hsl(235, 18%, 26%);
+  --clr-accent-200: hsl(231, 7%, 60%);
+  --clr-accent-0: hsl(0, 0%, 100%);
+
+  --ff-400: "Roboto";
+  --fw-400: 400;
+  --fw-600: 700;
+
+  --fs-300: 0.85rem;
+  --fs-400: 1rem;
+  --fs-600: 2rem;
+
+  --spacing-400: 1rem;
+  --spacing-600: 1.5rem;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-family: var(--ff-400);
+  font-size: var(--fs-400);
+  color: var(--clr-accent-600);
+}
+
+$spacing: (
+  400: var(--spacing-400),
+  600: var(--spacing-600),
+);
+
+@each $number, $value in $spacing {
+  .flow-#{$number} > * + * {
+    margin-top: $value;
+  }
+}
+
+@mixin mq($size: medium) {
+  @if $size == medium {
+    @media screen and (min-width: 380px) {
+      @content;
+    }
+  }
+}
+
+.btn {
+  display: block;
+  border: none;
+  border-radius: 7px;
+}
+
+.btn-primary {
+  padding: 1em 2em;
+  font-weight: var(--fw-600);
+  color: var(--clr-accent-0);
+  background-color: var(--clr-accent-600);
+}
+
+.sign-up {
+  min-height: 100vh;
+
+  &__title {
+    font-size: var(--fs-600);
+  }
+
+  &__content {
+    padding: var(--spacing-400);
+  }
+}
+
+.updates-list {
+  padding-left: 0;
+  list-style-type: none;
+
+  &__item {
+    padding-left: 1.75em;
+    background-image: url(../assets/images/icon-list.svg);
+    background-size: 1rem 1rem;
+    background-position: 0 calc(var(--fs-400) / 4);
+    background-repeat: no-repeat;
+  }
+}
+
+.sign-up-form {
+  display: grid;
+  gap: 0.5em;
+  margin-top: 2rem;
+
+  &__label {
+    font-weight: var(--fw-600);
+    font-size: var(--fs-300);
+  }
+
+  &__field {
+    padding: 1rem;
+    border: 1px solid var(--clr-accent-200);
+    border-radius: 7px;
+  }
+
+  &__btn {
+    margin-top: var(--spacing-600);
+    width: 100%;
+  }
+}

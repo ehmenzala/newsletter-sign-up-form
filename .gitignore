@@ -1,6 +1,4 @@
-*.sketch
-*.fig
-*.xd
+css
 
 .DS_Store
 .prettierignore
