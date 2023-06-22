@@ -3,9 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Newsletter sign-up form</title>
+    <title>Newsletter sign-up form with success message</title>
   </head>
   <body>
-    <main></main>
+    <main>
+      <article class="sign-up">
+        <div class="sign-up__img-wrapper">
+          <img
+            src="assets/images/illustration-sign-up-mobile.svg"
+            alt="An illustration of a tablet in an organge tones gradient background"
+            class="sign-up__img"
+          />
+        </div>
+        <div class="sign-up__content">
+          <h1>Stay updated!</h1>
+          <p>Join 60,000+ product managers receiving monthly updates on:</p>
+          <ul class="updates-list">
+            <li class="updates-list__item">
+              Product discovery and building what matters
+            </li>
+            <li class="updates-list__item">
+              Measuring to ensure updates are a success
+            </li>
+            <li class="updates-list__item">And much more!</li>
+          </ul>
+          <form action="#" class="sign-up-form">
+            <label class="sign-up-form__label" for="email">Email address</label>
+            <input
+              class="sign-up-form__field"
+              type="email"
+              placeholder="email@company.com"
+            />
+            <button class="btn btn-primary" type="submit">
+              Subscribe to monthly newsletter
+            </button>
+          </form>
+        </div>
+      </article>
+
+      <article class="success">
+        <h2 class="sucess__title">Thanks for suscribing!</h2>
+        <p>
+          A confirmation email has been sent to
+          <strong>ash@loremcompany.com</strong>. Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+        <button type="button" class="btn btn-primary">Dismiss message</button>
+      </article>
+    </main>
   </body>
 </html>
