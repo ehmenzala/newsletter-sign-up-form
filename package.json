@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,scss}\" && prettier --write index.html",
     "sass:watch": "sass --watch src/sass:src/css",
     "test": "echo \"Error: no tests found\" && exit 1"
   },
